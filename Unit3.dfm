@@ -1,0 +1,58 @@
+object AboutForma: TAboutForma
+  Left = 1269
+  Top = 188
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsToolWindow
+  Caption = 'About'
+  ClientHeight = 75
+  ClientWidth = 300
+  Color = clBtnFace
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object VersionLbl: TLabel
+    Left = 6
+    Top = 6
+    Width = 291
+    Height = 19
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'String Hacker, version 1.6 (June 12, 2022)'
+  end
+  object CopyrightLbl: TLabel
+    Left = 6
+    Top = 24
+    Width = 291
+    Height = 25
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Copyright (c) Ivan Movchan, 2022'
+  end
+  object WebsiteLbl: TLabel
+    Left = 6
+    Top = 54
+    Width = 267
+    Height = 13
+    Cursor = crHandPoint
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'https://nobootrecord.github.io'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    OnClick = WebsiteLblClick
+    OnMouseDown = WebsiteLblMouseDown
+    OnMouseMove = WebsiteLblMouseMove
+    OnMouseUp = WebsiteLblMouseUp
+    OnMouseLeave = WebsiteLblMouseLeave
+  end
+end

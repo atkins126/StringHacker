@@ -1,0 +1,92 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Unit1, Unit3, ExtCtrls;
+
+type
+  TSettingsForma = class(TForm)
+    WordWrapCheck: TCheckBox;
+    LangRadioGroup: TRadioGroup;
+    ChgEditFontBtn: TButton;
+    FontDlg: TFontDialog;
+    procedure WordWrapCheckClick(Sender: TObject);
+    procedure LangRadioGroupClick(Sender: TObject);
+    procedure ChgEditFontBtnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  SettingsForma: TSettingsForma;
+
+implementation
+
+{$R *.dfm}
+
+procedure SwitchToEnglish;
+begin
+  MainForma.HackButton.Caption := 'Apply';
+  MainForma.IntegerRadio.Caption := 'Integer';
+  MainForma.StringRadio.Caption := 'String';
+  MainForma.LoadButton.Caption := 'Load...';
+  MainForma.SaveButton.Caption := 'Save';
+  MainForma.SaveAsButton.Caption := 'Save as...';
+  MainForma.SettingsButton.Caption := 'Settings';
+  MainForma.AboutButton.Caption := 'About';
+  MainForma.ExitButton.Caption := 'Exit';
+  SettingsForma.Caption := 'Settings';
+  SettingsForma.ChgEditFontBtn.Caption := 'Change editor font';
+  SettingsForma.WordWrapCheck.Caption := 'Word wrap';
+  SettingsForma.LangRadioGroup.Caption := 'Language:';
+  AboutForma.Caption := 'About';
+  AboutForma.VersionLbl.Caption := 'String Hacker, version 1.6L (June 12, 2022)';
+  AboutForma.CopyrightLbl.Caption := 'Copyright (c) Ivan Movchan, 2022';
+end;
+
+procedure SwitchToRussian;
+begin
+  MainForma.HackButton.Caption := 'Применить';
+  MainForma.IntegerRadio.Caption := 'Целое число';
+  MainForma.StringRadio.Caption := 'Строка';
+  MainForma.LoadButton.Caption := 'Прочитать...';
+  MainForma.SaveButton.Caption := 'Записать';
+  MainForma.SaveAsButton.Caption := 'Записать в...';
+  MainForma.SettingsButton.Caption := 'Настройки';
+  MainForma.AboutButton.Caption := 'О проге';
+  MainForma.ExitButton.Caption := 'Выход';
+  SettingsForma.Caption := 'Настройки';
+  SettingsForma.ChgEditFontBtn.Caption := 'Сменить шрифт редактор';
+  SettingsForma.WordWrapCheck.Caption := 'Перенос слов';
+  SettingsForma.LangRadioGroup.Caption := 'Язык:';
+  AboutForma.Caption := 'О проге';
+  AboutForma.VersionLbl.Caption := 'String Hacker, версия 1.6L (сборка 12 июня 2022 года)';
+  AboutForma.CopyrightLbl.Caption := 'Автор: Иван Мовчан. Copyright (c) 2022';
+end;
+
+procedure TSettingsForma.WordWrapCheckClick(Sender: TObject);
+begin
+MainForma.StuffMemo.WordWrap := WordWrapCheck.Checked;
+if WordWrapCheck.Checked
+then MainForma.StuffMemo.ScrollBars := ssVertical
+else MainForma.StuffMemo.ScrollBars := ssBoth;
+end;
+
+procedure TSettingsForma.LangRadioGroupClick(Sender: TObject);
+begin
+if LangRadioGroup.ItemIndex = 0
+then SwitchToEnglish
+else if LangRadioGroup.ItemIndex = 1
+then SwitchToRussian;
+end;
+
+procedure TSettingsForma.ChgEditFontBtnClick(Sender: TObject);
+begin
+if FontDlg.Execute then MainForma.StuffMemo.Font := FontDlg.Font;
+end;
+
+end.
