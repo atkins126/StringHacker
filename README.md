@@ -1,6 +1,6 @@
 # String Hacker / StrHack
 
-String Hacker (or simply StrHack) is my old cryptographic utility written in pure Delphi 7 (and Visual C++).\
+String Hacker (or simply StrHack) is my old cryptographic utility written in pure Delphi 7 (and Visual C++).
 
 * A lot of mathematical and logical operations (ADD, SUB, XOR, NOT...) supported
 * Simple, user-friendly and multi-language user interface
@@ -14,7 +14,7 @@ Since June 2022 this project is closed and open-source. You can modify the progr
 
 -----------------------
 
-String Hacker (или же просто StrHack) - моя старая криптографическая утилита, написанная на Delphi 7 (и Visual C++).\
+String Hacker (или же просто StrHack) - моя старая криптографическая утилита, написанная на Delphi 7 (и Visual C++).
 
 * Есть поддержка многих математических и логических операций (ADD, SUB, XOR, NOT...)
 * Простой, дружелюбный и многоязычный GUI
